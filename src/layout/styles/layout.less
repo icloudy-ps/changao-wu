@@ -1,0 +1,141 @@
+.layout-wrapper {
+    position: relative;
+    width: 100%;
+
+    // 切换到夜间主题
+    &.moon {
+        .l-guide-sidebar-container {
+            background-color: @moonSidebarBgColor;
+            color: @moonSidebarTextColor;
+        }
+    }
+
+    // 切换到日间主题
+    &.sunny {
+        .l-guide-sidebar-container {
+            background-color: @sunnySidebarBgColor;
+            color: @sunnySidebarTextColor;
+        }
+    }
+
+    // 侧边栏折叠时
+    &.hideSidbar {
+
+        // 左侧侧边栏
+        .l-guide-sidebar-container {
+            width: @hideSideBarWidth;
+
+            // 标题区
+            /deep/ .logo-container>.logo-title {
+                height: 0;
+                width: 0;
+                overflow: hidden;
+                visibility: hidden;
+                margin-left: 0;
+            }
+
+            // 隐藏菜单项文字
+            /deep/ .el-sub-menu__title span {
+                height: 0;
+                width: 0;
+                overflow: hidden;
+                visibility: hidden;
+                display: inline-block;
+            }
+
+            /deep/ .el-menu-item span {
+                height: 0;
+                width: 0;
+                overflow: hidden;
+                visibility: hidden;
+                display: inline-block;
+            }
+        }
+
+        // 右侧主体区域
+        .r-main-container {
+            left: @hideSideBarWidth;
+            width: calc(100% - @hideSideBarWidth);
+        }
+    }
+
+    // 侧边栏展开时
+    &.openSidebar {
+
+        // 左侧侧边栏
+        .l-guide-sidebar-container {
+            width: @menuWidth;
+        }
+
+        // 右侧主体区域
+        .r-main-container {
+            left: @menuWidth;
+            width: calc(100% - @menuWidth);
+        }
+    }
+
+    // 左侧侧边栏
+    .l-guide-sidebar-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        background-color: @menuColor;
+        transition: @duration;
+
+        // 去掉菜单右侧边框
+        /deep/ .el-menu-vertical-demo {
+            border-right: none;
+        }
+    }
+
+    // 右侧主体区域
+    .r-main-container {
+        position: fixed;
+        top: 0;
+        min-height: 100vh;
+        background-color: rgb(240, 242, 245);
+
+        // 固定的顶部导航
+        .top-navbar {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 50px;
+            padding: 0 16px;
+            background-color: #fff;
+            box-sizing: border-box;
+        }
+
+        // 页面标签
+        .top-tag-container {
+            display: flex;
+            margin-top: 2px;
+            margin-bottom: 10px;
+            background-color: #fff;
+            padding: 6px 16px;
+
+            /deep/ .tags-item {
+                padding: 6px 8px;
+                margin-right: 8px;
+                font-size: 10px;
+                cursor: pointer;
+
+                // 激活项
+                &.active {
+                    color: @tagItemActiveTextColor;
+                    background-color: @tagItemActiveBgColor;
+                }
+            }
+        }
+
+        // 内容展示区
+        .r-content{
+            margin: 18px;
+            border-radius: @duration;
+            background-color: #fff;
+        }
+    }
+}

@@ -1,0 +1,6 @@
+:export {
+  moonSidebarTextColor: rgba(255, 255, 255, 0.8);
+  sunnySidebarTextColor: #393737;
+  moonMenuActiveTextColor: #fff;
+  sunnyMenuActiveTextColor: #48c9fb;
+}

@@ -1,0 +1,32 @@
+// 控制项目样式的变量
+
+// moon
+@moonSidebarBgColor: #2a3542; // 左侧侧边栏背景颜色
+@moonSidebarTextColor: rgba(255, 255, 255, 0.8); //字体色
+@moonLineColor: #54544fb1; // 线条颜色
+@moonMenuActiveTextColor: #fff; // 激活项菜单项字体颜色
+
+// sunny
+@sunnySidebarBgColor: #fff; // 左侧菜单背景颜色
+@sunnySidebarTextColor: #393737; // 字体色
+@sunnyLineColor: #72727241; // 线条颜色
+@sunnyMenuActiveTextColor: #48c9fb; // 激活项菜单项字体颜色
+
+// 侧边栏菜单
+@menuWidth: 200px;
+@menuColor: #2a3542;
+
+@openSideBarWidth: 200px; // 展开的侧边栏宽度
+@hideSideBarWidth: 64px; // 折叠的侧边栏宽度
+
+@duration: .3s; 
+@tagItemActiveTextColor: #fff; // 标签栏激活项文字颜色
+@tagItemActiveBgColor: #2a3542; // 标签栏激活项背景颜色
+
+// 定义导出。 js内导入该文件会得到一个对象。 可以将less变量导出去，供给js使用
+:export {
+    moonSidebarTextColor: @moonSidebarTextColor;
+    sunnySidebarTextColor: @sunnySidebarTextColor;
+    moonMenuActiveTextColor: @moonMenuActiveTextColor;
+    sunnyMenuActiveTextColor: @sunnyMenuActiveTextColor;
+}
